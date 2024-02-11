@@ -52,7 +52,7 @@ pipeline {
         }
 		 stage("Build Docker Image") {
             steps{
-               sh "docker build -t puneetgavri/sampleappimage:latest ."
+               sh "docker build -t zmanjith/sampleappimage:latest ."
             }
         }
         

@@ -1,12 +1,12 @@
 pipeline {
     agent any
 	 environment {
-        DOCKERHUB_CREDENTIALS = credentials('jenkins_docker')
+         DOCKERHUB_CREDENTIALS = credentials('jenkins_docker')
     }
     stages {
         stage('compile') {
 	   steps {
-                echo 'compiling..'
+                echo 'compiling...'
 		git url: 'https://github.com/puneetgavri/DevopsProjectSampleJavaApp.git'
 		sh script: '/opt/maven/bin/mvn compile'
            }

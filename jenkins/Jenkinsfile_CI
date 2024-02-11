@@ -1,7 +1,7 @@
 pipeline {
     agent any
 	 environment {
-        DOCKERHUB_CREDENTIALS = credentials('dockerhubtoken')
+        DOCKERHUB_CREDENTIALS = credentials('jenkins_docker')
     }
     stages {
         stage('compile') {
@@ -59,7 +59,7 @@ pipeline {
         stage("Docker Push"){
             steps{
             sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-            sh "docker push puneetgavri/sampleappimage:latest"
+            sh "docker push zmanjith/sampleappimage:latest"
             }
         }
     }
